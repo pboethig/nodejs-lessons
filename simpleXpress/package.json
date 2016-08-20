@@ -1,0 +1,22 @@
+{
+  "name": "simple-express",
+  "version": "1.0.0",
+  "description": "simple exress sample",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "exptress"
+  ],
+  "author": "peboethig",
+  "license": "MIT",
+  "dependencies":
+  {
+   "node-mailer":"*",
+   "body-parser":"*",
+   "express":"*",
+   "jade":"*"
+  }
+
+}
