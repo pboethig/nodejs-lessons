@@ -1,0 +1,29 @@
+{
+  "name": "simplecommand",
+  "version": "1.0.0",
+  "description": "a simple console command",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pboethig/nodejs-lessons.git"
+  },
+  "keywords": [
+    "nodejs",
+    "command"
+  ],
+  "author": "pboethig",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pboethig/nodejs-lessons/issues"
+  },
+  "homepage": "https://github.com/pboethig/nodejs-lessons#readme",
+  "bin": {
+    "createUser": "createUser.js"
+  },
+  "dependencies": {
+    "commander": "^2.9.0"
+  }
+}
