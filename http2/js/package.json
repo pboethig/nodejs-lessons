@@ -1,0 +1,27 @@
+{
+  "name": "http2",
+  "version": "1.0.0",
+  "description": "an http2 sampl",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pboethig/nodejs-lessons.git"
+  },
+  "keywords": [
+    "http2"
+  ],
+  "author": "peter boethig",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pboethig/nodejs-lessons/issues"
+  },
+  "homepage": "https://github.com/pboethig/nodejs-lessons#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "spdy": "^3.4.0"
+  }
+}

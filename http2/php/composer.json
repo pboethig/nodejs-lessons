@@ -1,0 +1,23 @@
+{
+    "name": "mittax/http2",
+    "description": "a simple phpclient for requesting api",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "pboethig",
+            "email": "pboethig@gmail.com"
+        }
+    ],
+    "require":
+    {
+
+    },
+    "require-dev": {
+        "phpunit/phpunit": "5.5.*"
+    },
+    "autoload":
+    {
+        "psr-4" : {"Client\\":"src/Client"}
+    }
+}
