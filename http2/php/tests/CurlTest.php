@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: root
- * Date: 18.09.16
- * Time: 19:59
+ * Testclass to test the simle webclient.
+ *
+ * @author Peter Böthig
+ * @license MIT
  */
 
 use PHPUnit\Framework\TestCase;
@@ -13,15 +13,20 @@ use Client\Curl;
 
 class CurlTest extends PHPUnit\Framework\TestCase
 {
-
+    /**
+     * @var Client\Curl
+     */
     private $_client = null;
+
 
     public function setUp()
     {
         $this->_client = new Curl();
     }
 
-
+    /**
+     * Simply assert serviceresponse
+     */
     public function testGet()
     {
         $expected = '{"message":"Hello Client"}';
