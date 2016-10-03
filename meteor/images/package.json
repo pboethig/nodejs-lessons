@@ -1,0 +1,13 @@
+{
+  "name": "images",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "axios": "^0.14.0",
+    "meteor-node-stubs": "~0.2.0",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1"
+  }
+}

@@ -1,0 +1,11 @@
+.emlpoyee-list
+{
+    display:flex;
+    flex-wrap:wrap; 
+    justify-content: space-around;
+}
+
+.thumbnail
+{
+    width: 300px;
+}
