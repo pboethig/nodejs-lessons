@@ -1,5 +1,5 @@
 # nodejs-lessons
-## learning Node hands on on udamy.com and egghead.io
+## learning Node hands on on udemy.com and egghead.io
 
 each folder contains single or multiple lessons
 
