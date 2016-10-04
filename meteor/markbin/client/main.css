@@ -1,1 +1,6 @@
 /* CSS declarations go here */
+#login-buttons
+{
+    margin:15px;
+    font-size:16px;
+}
