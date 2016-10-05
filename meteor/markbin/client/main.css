@@ -4,3 +4,7 @@
     margin:15px;
     font-size:16px;
 }
+
+.list-group-item{
+    height:55px;
+}
