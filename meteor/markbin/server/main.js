@@ -5,12 +5,11 @@ Meteor.startup(() =>
 {
 
   Meteor.methods({
-    'get.current.user':function()
+    'get.user.by.id':function(userId)
     {
+      const user = Meteor.users.findOne(userId);
 
-      //console.log("#######################################");
-
-      //console.log(Meteor.users.findOne(this.userId));
+      return user;
     }
   });
 
@@ -35,11 +34,9 @@ Meteor.startup(() =>
 
       const email = user.emails[0].address;
     
-      console.log('email:' + email);
-
-      let data = Bins.find({
-        sharedWith:{$elemMatch:{$eq:'pboethig5@gmail.co5'}}
-      });
+      let data = Bins.find(
+        {sharedWith:{$elemMatch:{$eq:'pboethig5@gmail.co5'}}}
+      );
 
       return data;
   });

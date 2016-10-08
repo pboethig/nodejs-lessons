@@ -27,3 +27,25 @@
 {
     margin: 0 10px;
 }
+
+a.login-link-text
+{
+    color:#fff;
+}
+
+
+a.login-link-text:hover
+{
+    color:#000090;
+}
+
+#login-buttons
+{
+    position:absolute;
+    left: 120px;
+    top:10px;
+}
+.tableContainer
+{
+    margin:10px;
+}

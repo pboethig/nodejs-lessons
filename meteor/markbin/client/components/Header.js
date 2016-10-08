@@ -1,30 +1,26 @@
 import React, {Component} from 'react';
 import Accounts from './Accounts';
-import {Link,browserHistory} from 'react-router'; 
+import AppBar from 'material-ui/AppBar';
+import IconButton from 'material-ui/IconButton';
+import IconMenu from 'material-ui/IconMenu';
+import MenuItem from 'material-ui/MenuItem';
+import FlatButton from 'material-ui/FlatButton';
+import Toggle from 'material-ui/Toggle';
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import NavigationClose from 'material-ui/svg-icons/navigation/close';
+import RaisedButton from 'material-ui/RaisedButton';
 
 class Header extends Component
 {
-    onBinClick(event)
-    {
-        event.preventDefault();
-
-        Meteor.call('bins.insert',(error, binId)=>{
-            browserHistory.push(`/bins/${binId}`);
-        });
-    }
-
     render()
     {
         return (
-            <nav className="nav navbar-default">
-                <div className="navbar-header">
-                    <Link to="/" className="navbar-brand">Markbin</Link>
-                </div>
-                <ul className="nav navbar-nav">
-                    <li><Accounts /></li>
-                    <li><a onClick={this.onBinClick.bind(this)} href="#">Create Bin</a></li>
-                </ul>
-            </nav>
+             <AppBar
+                title="Markbin"
+                showMenuIconButton={false}
+                >
+                    <Accounts/>
+            </AppBar>
             );
     }
 }
