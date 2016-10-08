@@ -24,7 +24,11 @@ export default createContainer((props)=>
 {
     const { binId } = props.params;
 
+    console.log('bis:'+binId);
+
     Meteor.subscribe('bins');
+    Meteor.subscribe('sharedBins');
+    Meteor.subscribe('allAnonymus');
 
     return {bin: Bins.findOne(binId)};
 

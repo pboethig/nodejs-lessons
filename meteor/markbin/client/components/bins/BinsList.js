@@ -20,6 +20,8 @@ class BinsList extends Component
             return(
                 <li className="list-group-item" key={bin._id}>
                    <Link to={url} > {bin._id}</Link>
+                   <span>{bin.ownerId}</span>
+                   <span>{bin.sharedWith}</span>
                 <span className="pull-right">
                     <button
                         className="btn btn-danger" 
@@ -34,6 +36,8 @@ class BinsList extends Component
 
     render()
     {
+        Meteor.call('get.current.user');
+        
         return (<ul className="list-group">
             {this.renderList()}
             </ul>
@@ -43,7 +47,9 @@ class BinsList extends Component
 
 export default createContainer(()=>
 {
+    Meteor.subscribe('allAnonymus');
     Meteor.subscribe('bins');
+    Meteor.subscribe('sharedBins');
 
     return {bins:Bins.find({}).fetch()};
 
