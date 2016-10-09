@@ -49,3 +49,14 @@ a.login-link-text:hover
 {
     margin:10px;
 }
+.shareDialog
+{
+    float:left;
+    padding:0;
+    margin:0;
+}
+
+.binCreate
+{
+    margin:5px;
+}

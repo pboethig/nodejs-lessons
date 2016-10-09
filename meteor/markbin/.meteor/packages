@@ -23,3 +23,5 @@ twbs:bootstrap
 accounts-ui
 accounts-password
 sgslo:cmstyle
+sanjo:jasmine
+velocity:html-reporter

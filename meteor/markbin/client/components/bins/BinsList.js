@@ -1,11 +1,36 @@
 import React , {Component} from 'react';
 import ReactDOM from 'react-dom';
+/**
+ * Get the share dialog as standalone componente
+ */
+import BinsShareDialog from './BinsShareDialog';
+
+/**
+ * Datacontainer to store mongo db data
+ */
 import {Bins} from '../../../imports/collections/bins';
 import {createContainer} from 'meteor/react-meteor-data';
+
+/**
+ * Button components
+ */
 import RaisedButton from 'material-ui/RaisedButton';
+
+/**
+ * table definitions
+ */
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
 import {Link,browserHistory} from 'react-router';
 
+/**
+ * Share formular helper libs 
+ */
+import Divider from 'material-ui/Divider';
+import Paper from 'material-ui/Paper';
+
+/**
+ * This configures the table component
+ */
 const styles = {
   propContainer: {
     overflow: 'hidden',
@@ -14,15 +39,28 @@ const styles = {
   propToggleHeader: {
     margin: '20px auto 10px',
   },
+    errorStyle: {
+  },
 };
 
+
+
+
+/**
+ * Component to list all Markdown bins ()
+ */
 class BinsList extends Component
 {
+    
      constructor(props) 
      {
         super(props);
 
         this.state = {
+
+        /**
+         * Table state
+         */     
         fixedHeader: true,
         fixedFooter: true,
         stripedRows: false,
@@ -31,11 +69,15 @@ class BinsList extends Component
         multiSelectable: false,
         enableSelectAll: false,
         deselectOnClickaway: false,
-        showCheckboxes: false
+        showCheckboxes: false,
         };
     }
 
-    onBinClick(event)
+    /**
+     * Creates a bin
+     * @param bin 
+     */ 
+    createBin(event)
     {
         event.preventDefault();
 
@@ -44,11 +86,19 @@ class BinsList extends Component
         });
     }
 
+    /**
+     * Deletes a markuo bin
+     * @param bin
+     */ 
     onBinRemove(bin)
     {
         Meteor.call('bins.remove',bin);
     }
 
+
+    /**
+     * Renders the bins list
+     */ 
     renderList()
     {
         return this.props.bins.map(bin=>
@@ -56,7 +106,7 @@ class BinsList extends Component
             const url="/bins/" + bin._id;    
 
             const user = Meteor.users.findOne(bin.ownerId);
-            
+
             let email = 'guestuser';
 
             if(user)
@@ -73,6 +123,9 @@ class BinsList extends Component
                     <TableRowColumn>{bin.sharedWith}</TableRowColumn>
                     <TableRowColumn>
                         <span className="pull-right">
+
+                            <BinsShareDialog bin={bin}/>
+                            &nbsp;
                             <RaisedButton label="Delete" secondary={true} onClick={() => this.onBinRemove(bin)}/>
                         </span>
                         </TableRowColumn>
@@ -86,8 +139,9 @@ class BinsList extends Component
         
         return (
             <div className="tableContainer">
-                <RaisedButton label="Create bin" onClick={this.onBinClick.bind(this)}/>
-
+                <Divider />
+                    <RaisedButton className="binCreate" label="Create bin" primary={true} onClick={this.createBin.bind(this)}/>
+                <Divider />
             <Table
                 fixedHeader={this.state.fixedHeader}
                 fixedFooter={this.state.fixedFooter}
